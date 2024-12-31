@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2025 Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: green;
+            color: white;
+            text-align: center;
+        }
+        .page {
+            display: none;
+            width: 80%;
+            max-width: 600px;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .visible {
+            display: block;
+        }
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('dat.gif');
+            background-size: cover;
+            z-index: -1;
+            animation: fadeIn 9s;
+        }
+        .animate {
+            animation: fadeIn 9s;
+            font-size: 30px;
+            color: yellow; /* Change color as needed */
+            animation: blink 3s step-end infinite; /* Adjust speed with duration */
+            text-align: center;
+            margin-top: 50px;
+            font-family: initial;
+            width: 60%;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            animation: fadeIn 5s;
+        }
+        .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+}
+button{
+  background-color: yellow;  
+}
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="page visible">
+        <h1>Open the New Year</h1>
+       <h2>@mugisha</h2> 
+        <button onclick="openNewYear()">Click to Open</button>
+    </div>
+
+    <div id="page2" class="page">
+        <div class="fireworks"></div>
+        <h1 class="animate">WISHING YOU</h1>
+        <div class="slideshow-container">
+            <img src="images (2).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade"> <!-- Replace with your logo URL -->
+            <img src="images (4).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade">
+            <img src="images (3).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade"> 
+            <img src="images (5).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade"> 
+            <img src="images (6).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade"> 
+            <img src="images (7).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade"> 
+            <img src="images (8).jpeg" alt="Happy New Year 2025 Logo" class="mySlides fade"> 
+        </div>
+       
+        <p style="color: yellow;">Wishing you joy, peace, and prosperity in the new year!</p>
+        <p style="color: blue">@mugisha</p>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        function openNewYear() {
+            document.getElementById('page1').classList.remove('visible');
+            document.getElementById('page2').classList.add('visible');
+        }
+        function goBack() {
+            document.getElementById('page2').classList.remove('visible');
+            document.getElementById('page1').classList.add('visible');
+        }
+    </script>
+    <script>
+
+
+var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 4000); // Change image every 2 seconds
+        }
+
+    </script>
+
+</body>
+</html>
